@@ -1,22 +1,20 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
- <script src="https://5gvci.com/act/files/tag.min.js?z=12150764" data-cfasync="false" async></script>
- <script src="https://quge5.com/88/tag.min.js" data-zone="303447" async data-cfasync="false"></script>
- <meta name="google-site-verification" content="bACK7QrTmGqHJwSlVomqm9KlqD0H9PJBk28X0X3e6zk" />
- <meta name="monetag" content="b711f7a9326861e3287bfaa48a94be7c">
- <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8607618017422312" crossorigin="anonymous"></script>
+<script src="https://5gvci.com/act/files/tag.min.js?z=12150764" data-cfasync="false" async></script>
+<script src="https://quge5.com/88/tag.min.js" data-zone="303447" async data-cfasync="false"></script>
+<meta name="google-site-verification" content="bACK7QrTmGqHJwSlVomqm9KlqD0H9PJBk28X0X3e6zk">
+<meta name="monetag" content="b711f7a9326861e3287bfaa48a94be7c">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8607618017422312" crossorigin="anonymous"></script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="theme-color" content="#080b14">
-<title>FlimBox - Movies, Anime & Articles</title>
-
+<title>FlimBox - Movies & Anime</title>
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
 body{background:#080b14;color:white;font-family:Arial,sans-serif}
 header{background:#101522;padding:18px 6%;display:flex;align-items:center;justify-content:space-between;gap:15px;flex-wrap:wrap;position:sticky;top:0;z-index:10}
-.logo{font-size:29px;font-weight:900;color:white}
+.logo{font-size:29px;font-weight:900;color:white;text-decoration:none}
 .logo span{color:#ff365f}
 nav{display:flex;gap:20px}
 nav a{color:#ddd;text-decoration:none;font-size:14px}
@@ -40,346 +38,215 @@ section{padding:45px 6%}
 .info p{font-size:12px;color:#aeb7c8;line-height:1.6}
 .rating{color:#ffcb62}
 .empty{color:#aaa;grid-column:1/-1;text-align:center;padding:30px}
-.modal{display:none;position:fixed;inset:0;background:#000d;z-index:30;align-items:center;justify-content:center;padding:20px}
-.modalbox{background:#171f30;padding:25px;border-radius:14px;max-width:520px;width:100%;position:relative}
+.modal{display:none;position:fixed;inset:0;background:#000d;z-index:30;align-items:center;justify-content:center;padding:20px;overflow:auto}
+.modalbox{background:#171f30;padding:25px;border-radius:14px;max-width:520px;width:100%;position:relative;max-height:90vh;overflow:auto}
 .modalbox img{width:130px;float:left;margin-right:18px;border-radius:7px}
 .modalbox p{color:#c1c7d3;line-height:1.8;margin-top:12px}
 .close{position:absolute;right:18px;top:10px;font-size:28px;cursor:pointer}
 .ad{min-height:90px;border:1px dashed #51596b;margin:20px 6%;display:flex;align-items:center;justify-content:center;color:#888;font-size:13px}
 footer{text-align:center;background:#101522;padding:35px;color:#9da7b8}
 footer a{color:white;margin:8px;text-decoration:none;font-size:13px}
-
-/* Movie & Anime Articles */
-.article-intro{color:#aeb7c8;max-width:700px;line-height:1.8;margin-top:-12px;margin-bottom:25px}
-.article-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:20px}
-.article-card{background:#151c2b;border:1px solid #222b3c;border-radius:10px;overflow:hidden;transition:.3s}
-.article-card:hover{transform:translateY(-5px);border-color:#ff365f}
-.article-card img{width:100%;height:190px;object-fit:cover;display:block;background:#202738}
-.article-content{padding:16px}
-.article-tag{font-size:11px;letter-spacing:1px;color:#ff6684;font-weight:bold}
-.article-content h3{font-size:17px;margin:9px 0}
-.article-content p{font-size:13px;color:#aeb7c8;line-height:1.7}
-.article-read{display:inline-block;margin-top:13px;color:#ff6684;text-decoration:none;font-weight:bold;font-size:13px}
-.article-read:hover{color:white}
-.article-full{background:#151c2b;border:1px solid #222b3c;border-radius:10px;padding:22px;margin-top:20px;scroll-margin-top:90px}
-.article-full h3{font-size:22px;margin-bottom:8px}
-.article-full p{color:#c1c7d3;line-height:1.85;margin-top:12px}
-.article-full .article-tag{display:block;margin-bottom:8px}
-@media(max-width:950px){.article-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
-@media(max-width:600px){.article-grid{grid-template-columns:1fr 1fr;gap:12px}.article-card img{height:145px}.article-content{padding:12px}.article-content h3{font-size:15px}.article-full{padding:16px}}
-
+.anime-section{background:#0d1220}
+.review-panel{clear:both;padding-top:18px;margin-top:18px;border-top:1px solid #30394c}
+.review-panel h3{margin:12px 0}
+.review-panel label{display:block;color:#c1c7d3;margin:10px 0 6px;font-size:13px}
+.review-panel input,.review-panel textarea,.review-panel select{width:100%;background:#202738;border:1px solid #384258;color:white;padding:11px;border-radius:7px}
+.review-panel textarea{min-height:75px;resize:vertical}
+.review-panel button{background:#ff365f;color:white;border:0;border-radius:6px;padding:10px 16px;margin-top:10px;cursor:pointer}
+.review-list{margin-top:15px}
+.review-item{background:#202738;padding:11px;border-radius:7px;margin-top:8px}
+.review-item strong{color:#ffcb62}
+.section-note{color:#aeb7c8;line-height:1.7;margin-top:-12px;margin-bottom:22px}
 @media(max-width:950px){.grid{grid-template-columns:repeat(3,1fr)}}
-@media(max-width:600px){
- header{justify-content:center}
- nav{width:100%;justify-content:center}
- header input{width:100%}
- .grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
- section{padding:35px 4%}
- .hero{padding:65px 5%}
-}
+@media(max-width:600px){header{justify-content:center}nav{width:100%;justify-content:center}header input{width:100%}.grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}section{padding:35px 4%}.hero{padding:65px 5%}}
 </style>
 </head>
 <body>
-
 <header>
- <a href="#" class="logo">Flim<span>Box</span></a>
- <nav>
-  <a href="#home">Home</a>
-  <a href="#movies">Movies</a>
-  <a href="#trending">Trending</a>
-  <a href="#articles">Articles</a>
- </nav>
- <input id="search" placeholder="Search movie...">
+<a href="#" class="logo">Flim<span>Box</span></a>
+<nav>
+<a href="#home">Home</a>
+<a href="#movies">Movies</a>
+<a href="#anime">Anime</a>
+<a href="#trending">Trending</a>
+</nav>
+<input id="search" placeholder="Search movies & anime...">
 </header>
 
 <div class="hero" id="home">
- <p style="color:#ffcb62;letter-spacing:3px">WELCOME TO FLIMBOX</p>
- <h1>Unlimited Movie Discovery</h1>
- <p>Explore Bollywood, South Indian and Hollywood movies. Find your favourite films and discover something new.</p>
- <a href="#movies" class="btn">Explore Movies →</a>
+<p style="color:#ffcb62;letter-spacing:3px">WELCOME TO FLIMBOX</p>
+<h1>Unlimited Movie Discovery</h1>
+<p>Explore Bollywood, South Indian and Hollywood movies, plus popular anime. Find your next favourite story.</p>
+<a href="#movies" class="btn">Explore Movies →</a>
+<a href="#anime" class="btn">Explore Anime →</a>
 </div>
 
 <section id="movies">
- <h2 class="heading">Explore <span>Movies</span></h2>
- <div class="filters" id="filters">
-  <button class="active" data-cat="All">All</button>
-  <button data-cat="Bollywood">Bollywood</button>
-  <button data-cat="South">South Indian</button>
-  <button data-cat="Hollywood">Hollywood</button>
- </div>
- <div class="grid" id="movieGrid"></div>
+<h2 class="heading">Explore <span>Movies</span></h2>
+<div class="filters" id="filters">
+<button class="active" data-cat="All">All</button>
+<button data-cat="Bollywood">Bollywood</button>
+<button data-cat="South">South Indian</button>
+<button data-cat="Hollywood">Hollywood</button>
+</div>
+<div class="grid" id="movieGrid"></div>
+</section>
+
+<section id="anime" class="anime-section">
+<h2 class="heading">Explore <span>Anime</span></h2>
+<p class="section-note">Discover anime movies and series. Select a poster to read details and share your review.</p>
+<div class="filters" id="animeFilters">
+<button class="active" data-anime-cat="All">All Anime</button>
+<button data-anime-cat="Action">Action</button>
+<button data-anime-cat="Adventure">Adventure</button>
+<button data-anime-cat="Fantasy">Fantasy</button>
+<button data-anime-cat="Drama">Drama</button>
+</div>
+<div class="grid" id="animeGrid"></div>
 </section>
 
 <div class="ad">Advertisement Space</div>
 
 <section id="trending">
- <h2 class="heading">Popular <span>Movies</span></h2>
- <div class="grid" id="trendingGrid"></div>
-</section>
-
-<!-- MOVIE & ANIME ARTICLES SECTION -->
-<section id="articles">
- <h2 class="heading">Movie & <span>Anime Articles</span></h2>
- <p class="article-intro">Explore entertainment stories, movie guides and anime features. Select an article below to read more.</p>
-
- <div class="article-grid">
-
-  <article class="article-card">
-   <img src="https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?w=800" alt="Cinema screen and movie theatre" loading="lazy">
-   <div class="article-content">
-    <span class="article-tag">MOVIE GUIDE</span>
-    <h3>Why We Love Science Fiction Movies</h3>
-    <p>Discover how sci-fi films take audiences into imaginative worlds of future technology and space adventures.</p>
-    <a class="article-read" href="#article-sci-fi">Read Article →</a>
-   </div>
-  </article>
-
-  <article class="article-card">
-   <img src="https://images.unsplash.com/photo-1517604931442-7e0c8ed2963c?w=800" alt="Movie theatre seats" loading="lazy">
-   <div class="article-content">
-    <span class="article-tag">MOVIE TIPS</span>
-    <h3>How to Choose Your Next Movie</h3>
-    <p>A simple guide to finding a film that matches your mood, interests and favourite genres.</p>
-    <a class="article-read" href="#article-movie-tips">Read Article →</a>
-   </div>
-  </article>
-
-  <article class="article-card">
-   <img src="https://images.unsplash.com/photo-1578632767115-35136e46d4fd?w=800" alt="Anime inspired illustration" loading="lazy">
-   <div class="article-content">
-    <span class="article-tag">ANIME GUIDE</span>
-    <h3>Why Anime Is Loved Around the World</h3>
-    <p>Explore the storytelling, characters and creative styles that make anime popular worldwide.</p>
-    <a class="article-read" href="#article-anime">Read Article →</a>
-   </div>
-  </article>
-
-  <article class="article-card">
-   <img src="https://images.unsplash.com/photo-1614583225154-5fcapa3c8f13?w=800" alt="Colourful animation artwork" loading="lazy">
-   <div class="article-content">
-    <span class="article-tag">ANIME BEGINNERS</span>
-    <h3>Anime Genres for New Fans</h3>
-    <p>Get to know action, adventure, comedy, fantasy and romance before choosing your first series.</p>
-    <a class="article-read" href="#article-genres">Read Article →</a>
-   </div>
-  </article>
-
- </div>
-
- <article class="article-full" id="article-sci-fi">
-  <span class="article-tag">MOVIE GUIDE</span>
-  <h3>Why We Love Science Fiction Movies</h3>
-  <p>Science fiction movies take audiences beyond everyday life. They explore futuristic technology, space travel, artificial intelligence and imaginary civilizations.</p>
-  <p>One of the biggest attractions of this genre is its creativity. These stories encourage viewers to imagine what the future might look like. They can also raise interesting questions about humanity, technology and society.</p>
-  <p>Whether you enjoy space adventures, futuristic mysteries or stories about new inventions, science fiction offers a wide range of experiences for movie fans.</p>
- </article>
-
- <article class="article-full" id="article-movie-tips">
-  <span class="article-tag">MOVIE TIPS</span>
-  <h3>How to Choose Your Next Movie</h3>
-  <p>Choosing a movie can be difficult when there are so many options. Start by deciding what kind of story you feel like watching: action, comedy, drama, thriller, romance or science fiction.</p>
-  <p>You can also check the film's synopsis, cast, director and viewer reviews. A good story and strong performances can make a movie memorable.</p>
-  <p>Most importantly, choose a film that matches your interests and enjoy the experience.</p>
- </article>
-
- <article class="article-full" id="article-anime">
-  <span class="article-tag">ANIME GUIDE</span>
-  <h3>Why Anime Is Loved Around the World</h3>
-  <p>Anime has become a worldwide entertainment phenomenon. Its distinctive art styles, memorable characters and emotional storytelling attract viewers from many different countries.</p>
-  <p>Anime covers a wide range of genres, including action, adventure, comedy, fantasy, romance and drama. Different series offer different worlds, themes and experiences.</p>
-  <p>Its creativity and variety have helped anime build a passionate international community.</p>
- </article>
-
- <article class="article-full" id="article-genres">
-  <span class="article-tag">ANIME BEGINNERS</span>
-  <h3>Anime Genres for New Fans</h3>
-  <p>If you are new to anime, start with a genre that matches your interests. Action anime often features exciting battles, while adventure stories take characters into unfamiliar worlds.</p>
-  <p>Comedy is a good choice for light entertainment. Fantasy introduces magical settings, and romance focuses on relationships and emotions.</p>
-  <p>Try different styles and stories to discover which kind of anime you enjoy most.</p>
- </article>
+<h2 class="heading">Popular <span>Movies</span></h2>
+<div class="grid" id="trendingGrid"></div>
 </section>
 
 <div class="modal" id="modal">
- <div class="modalbox">
-  <span class="close" id="close">&times;</span>
-  <div id="details"></div>
- </div>
+<div class="modalbox">
+<span class="close" id="close">&times;</span>
+<div id="details"></div>
+</div>
 </div>
 
 <footer>
- <div class="logo">Flim<span>Box</span></div>
- <p style="margin:12px">Your Ultimate Movie Discovery Destination</p>
- <p style="margin:15px">
-  <a href="about.html">About Us</a>
-  <a href="contact.html">Contact</a>
-  <a href="privacy.html">Privacy Policy</a>
-  <a href="disclaimer.html">Disclaimer</a>
- </p>
- <p>© <span id="year"></span> FlimBox. All Rights Reserved.</p>
+<div class="logo">Flim<span>Box</span></div>
+<p style="margin:12px">Your Ultimate Movie Discovery Destination</p>
+<p style="margin:15px">
+<a href="about.html">About Us</a>
+<a href="contact.html">Contact</a>
+<a href="privacy.html">Privacy Policy</a>
+<a href="disclaimer.html">Disclaimer</a>
+</p>
+<p>© <span id="year"></span> FlimBox. All Rights Reserved.</p>
 </footer>
 
 <script>
-const posterBase =
-"https://omniwebticketing6.com/imaginecinemas/files-circuit/images/posters/webcontent/poster/";
+const posterBase="https://omniwebticketing6.com/imaginecinemas/files-circuit/images/posters/webcontent/poster/";
 
-const movies = [
- {
-  name:"Jawan",category:"Bollywood",year:2023,rating:"7.5",
-  poster:posterBase+"Jawan.jpg",
-  description:"An action thriller featuring a gripping story and powerful performances."
- },
- {
-  name:"Pushpa 2",category:"South",year:2024,rating:"8.0",
-  poster:posterBase+"pushpa2.jpg",
-  description:"An action-packed Telugu film starring Allu Arjun."
- },
- {
-  name:"Kalki 2898 AD",category:"South",year:2024,rating:"7.5",
-  poster:posterBase+"Kalki2898.jpg",
-  description:"A futuristic science-fiction adventure."
- },
- {
-  name:"Jailer",category:"South",year:2023,rating:"7.0",
-  poster:posterBase+"Jailer.jpg",
-  description:"An action entertainer starring Rajinikanth."
- },
- {
-  name:"Kanguva",category:"South",year:2024,rating:"6.5",
-  poster:posterBase+"Kanguva-Poster.jpg",
-  description:"A fantasy action adventure."
- },
- {
-  name:"Raayan",category:"South",year:2024,rating:"7.0",
-  poster:posterBase+"raayan.jpg",
-  description:"A Tamil action drama."
- },
- {
-  name:"Jurassic Park",category:"Hollywood",year:1993,rating:"8.2",
-  poster:posterBase+"Jurassic%20Park.jpg",
-  description:"A classic dinosaur adventure."
- },
- {
-  name:"Jaws",category:"Hollywood",year:1975,rating:"8.1",
-  poster:posterBase+"Jaws.jpg",
-  description:"A classic suspense thriller."
- },
- {
-  name:"Pulp Fiction",category:"Hollywood",year:1994,rating:"8.9",
-  poster:posterBase+"pulp_fiction_ver2.jpg",
-  description:"A celebrated crime drama."
- },
- {
-  name:"Kalki Poster",category:"South",year:2024,rating:"7.5",
-  poster:posterBase+"Kalki-Poster%20%28002%29.jpg",
-  description:"An additional poster edition of Kalki 2898 AD."
- }
+const movies=[
+{name:"Jawan",category:"Bollywood",year:2023,rating:"7.5",poster:posterBase+"Jawan.jpg",description:"An action thriller featuring a gripping story and powerful performances."},
+{name:"Pushpa 2",category:"South",year:2024,rating:"8.0",poster:posterBase+"pushpa2.jpg",description:"An action-packed Telugu film starring Allu Arjun."},
+{name:"Kalki 2898 AD",category:"South",year:2024,rating:"7.5",poster:posterBase+"Kalki2898.jpg",description:"A futuristic science-fiction adventure."},
+{name:"Jailer",category:"South",year:2023,rating:"7.0",poster:posterBase+"Jailer.jpg",description:"An action entertainer starring Rajinikanth."},
+{name:"Kanguva",category:"South",year:2024,rating:"6.5",poster:posterBase+"Kanguva-Poster.jpg",description:"A fantasy action adventure."},
+{name:"Raayan",category:"South",year:2024,rating:"7.0",poster:posterBase+"raayan.jpg",description:"A Tamil action drama."},
+{name:"Jurassic Park",category:"Hollywood",year:1993,rating:"8.2",poster:posterBase+"Jurassic%20Park.jpg",description:"A classic dinosaur adventure."},
+{name:"Jaws",category:"Hollywood",year:1975,rating:"8.1",poster:posterBase+"Jaws.jpg",description:"A classic suspense thriller."},
+{name:"Pulp Fiction",category:"Hollywood",year:1994,rating:"8.9",poster:posterBase+"pulp_fiction_ver2.jpg",description:"A celebrated crime drama."},
+{name:"Kalki Poster",category:"South",year:2024,rating:"7.5",poster:posterBase+"Kalki-Poster%20%28002%29.jpg",description:"An additional poster edition of Kalki 2898 AD."}
+];
+
+const anime=[
+{name:"Demon Slayer",category:"Action",year:2019,rating:"8.6",poster:"https://image.tmdb.org/t/p/w500/xUfR7J7WHs7a6ZSOX1k0x7yK8Vt.jpg",description:"Tanjiro joins the Demon Slayer Corps after a demon attack changes his family forever."},
+{name:"Your Name",category:"Drama",year:2016,rating:"8.4",poster:"https://image.tmdb.org/t/p/w500/q719jXXEzOoYaps6babgPrayer.jpg",description:"Two teenagers discover a mysterious connection that crosses time and distance."},
+{name:"One Piece",category:"Adventure",year:1999,rating:"9.0",poster:"https://image.tmdb.org/t/p/w500/cMD9Ygx3z5aN7a0qkJ6y6Q9g5j.jpg",description:"Monkey D. Luffy and his crew set sail in search of the legendary One Piece treasure."},
+{name:"Attack on Titan",category:"Action",year:2013,rating:"9.0",poster:"https://image.tmdb.org/t/p/w500/hTP1DtLGFamjfu8WqjnuQdP1n4i.jpg",description:"Humanity fights for survival behind enormous walls in a world threatened by Titans."},
+{name:"Spirited Away",category:"Fantasy",year:2001,rating:"8.6",poster:"https://image.tmdb.org/t/p/w500/39wmItIWsg5sZMyRUHLkWBcuVCM.jpg",description:"A young girl enters a mysterious spirit world and must find a way to save her parents."},
+{name:"Naruto",category:"Adventure",year:2002,rating:"8.4",poster:"https://image.tmdb.org/t/p/w500/vauCEnR7CiyBDzRCeElKkCaXDw5.jpg",description:"A young ninja dreams of becoming the strongest leader of his village."}
 ];
 
 const grid=document.getElementById("movieGrid");
+const animeGrid=document.getElementById("animeGrid");
 const trending=document.getElementById("trendingGrid");
 const search=document.getElementById("search");
-let category="All";
+let category="All",animeCategory="All",currentItem=null,currentType="movie";
 
-function card(movie,index){
- return `
- <div class="card" data-index="${index}">
-  <img src="${movie.poster}"
-       alt="${movie.name} movie poster"
-       loading="lazy"
-       onerror="this.onerror=null;this.src='https://placehold.co/400x600/151c2b/ffffff?text=Poster+Unavailable'">
-  <div class="info">
-   <h3>${movie.name}</h3>
-   <p>${movie.category} • ${movie.year}</p>
-   <p class="rating">★ ${movie.rating}/10</p>
-  </div>
- </div>`;
+function card(item,index,type){
+return `<div class="card" data-index="${index}" data-type="${type}">
+<img src="${item.poster}" alt="${item.name} poster" loading="lazy" onerror="this.onerror=null;this.src='https://placehold.co/400x600/151c2b/ffffff?text=Poster+Unavailable'">
+<div class="info"><h3>${item.name}</h3><p>${item.category} • ${item.year}</p><p class="rating">★ ${item.rating}/10</p></div></div>`;
 }
 
-function render(){
- let results=movies.map((m,i)=>({...m,index:i})).filter(m=>{
-  const matchesCategory=category==="All"||m.category===category;
-  const q=search.value.toLowerCase();
-  return matchesCategory && (m.name.toLowerCase().includes(q) ||
-    m.category.toLowerCase().includes(q));
- });
- grid.innerHTML=results.length
-  ?results.map(m=>card(m,m.index)).join("")
-  :'<div class="empty">No movies found!</div>';
+function renderMovies(){
+const q=search.value.toLowerCase();
+const results=movies.map((m,i)=>({...m,index:i})).filter(m=>(category==="All"||m.category===category)&&(m.name.toLowerCase().includes(q)||m.category.toLowerCase().includes(q)));
+grid.innerHTML=results.length?results.map(m=>card(m,m.index,"movie")).join(""):'<div class="empty">No movies found!</div>';
 }
-
-function showDetails(movie){
- document.getElementById("details").innerHTML=`
-  <img src="${movie.poster}" alt="${movie.name} poster"
-  onerror="this.src='https://placehold.co/400x600/151c2b/ffffff?text=Poster'">
-  <h2>${movie.name}</h2>
-  <p>Category: ${movie.category}</p>
-  <p>Release Year: ${movie.year}</p>
-  <p>Rating: ★ ${movie.rating}/10</p>
-  <p>${movie.description}</p>
-  <div style="clear:both"></div>
- `;
- document.getElementById("modal").style.display="flex";
+function renderAnime(){
+const q=search.value.toLowerCase();
+const results=anime.map((a,i)=>({...a,index:i})).filter(a=>(animeCategory==="All"||a.category===animeCategory)&&(a.name.toLowerCase().includes(q)||a.category.toLowerCase().includes(q)));
+animeGrid.innerHTML=results.length?results.map(a=>card(a,a.index,"anime")).join(""):'<div class="empty">No anime found!</div>';
 }
+function render(){renderMovies();renderAnime();}
+function reviewKey(type,item){return "flimbox-reviews-"+type+"-"+item.name;}
+function loadReviews(type,item){try{return JSON.parse(localStorage.getItem(reviewKey(type,item))||"[]");}catch(e){return [];}}
+function escapeText(value){return String(value).replace(/[&<>"']/g,ch=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[ch]));}
 
+function showDetails(item,type){
+currentItem=item;currentType=type;
+const reviews=loadReviews(type,item);
+const reviewHtml=reviews.length?reviews.map(r=>`<div class="review-item"><strong>★ ${r.rating}/5 — ${escapeText(r.name)}</strong><p>${escapeText(r.text)}</p></div>`).join(""):'<p>No reviews yet. Be the first to review!</p>';
+document.getElementById("details").innerHTML=`
+<img src="${item.poster}" alt="${item.name} poster" onerror="this.onerror=null;this.src='https://placehold.co/400x600/151c2b/ffffff?text=Poster'">
+<h2>${item.name}</h2><p>Type: ${type==="anime"?"Anime":"Movie"}</p>
+<p>Category: ${item.category}</p><p>Release Year: ${item.year}</p>
+<p>Rating: ★ ${item.rating}/10</p><p>${item.description}</p>
+<div class="review-panel"><h3>Visitor Reviews</h3><div class="review-list">${reviewHtml}</div>
+<h3>Write a Review</h3>
+<label for="reviewName">Your name</label><input id="reviewName" maxlength="35" placeholder="Enter your name">
+<label for="reviewRating">Your rating</label><select id="reviewRating"><option value="5">★★★★★ - Excellent</option><option value="4">★★★★ - Very Good</option><option value="3">★★★ - Good</option><option value="2">★★ - Fair</option><option value="1">★ - Poor</option></select>
+<label for="reviewText">Your review</label><textarea id="reviewText" maxlength="500" placeholder="Write your review..."></textarea>
+<button type="button" id="submitReview">Submit Review</button></div><div style="clear:both"></div>`;
+document.getElementById("modal").style.display="flex";
+document.getElementById("submitReview").addEventListener("click",submitReview);
+}
+function submitReview(){
+const name=document.getElementById("reviewName").value.trim();
+const rating=document.getElementById("reviewRating").value;
+const review=document.getElementById("reviewText").value.trim();
+if(!name||!review){alert("Please enter your name and review.");return;}
+const reviews=loadReviews(currentType,currentItem);
+reviews.unshift({name,rating,text:review});
+try{localStorage.setItem(reviewKey(currentType,currentItem),JSON.stringify(reviews.slice(0,30)));}
+catch(e){alert("Your browser could not save this review.");return;}
+showDetails(currentItem,currentType);
+}
 function attachEvents(element){
- element.addEventListener("click",e=>{
-  const item=e.target.closest(".card");
-  if(item)showDetails(movies[Number(item.dataset.index)]);
- });
+element.addEventListener("click",e=>{
+const item=e.target.closest(".card");if(!item)return;
+const type=item.dataset.type,index=Number(item.dataset.index);
+showDetails(type==="anime"?anime[index]:movies[index],type);
+});
 }
-
-document.querySelectorAll(".filters button").forEach(btn=>{
- btn.addEventListener("click",()=>{
-  document.querySelectorAll(".filters button").forEach(b=>b.classList.remove("active"));
-  btn.classList.add("active");
-  category=btn.dataset.cat;
-  render();
- });
-});
-
+document.querySelectorAll("#filters button").forEach(btn=>btn.addEventListener("click",()=>{
+document.querySelectorAll("#filters button").forEach(b=>b.classList.remove("active"));
+btn.classList.add("active");category=btn.dataset.cat;renderMovies();
+}));
+document.querySelectorAll("#animeFilters button").forEach(btn=>btn.addEventListener("click",()=>{
+document.querySelectorAll("#animeFilters button").forEach(b=>b.classList.remove("active"));
+btn.classList.add("active");animeCategory=btn.dataset.animeCat;renderAnime();
+}));
 search.addEventListener("input",render);
-
-document.getElementById("close").onclick=()=>{
- document.getElementById("modal").style.display="none";
-};
-
-document.getElementById("modal").onclick=e=>{
- if(e.target.id==="modal")e.currentTarget.style.display="none";
-};
-
-document.addEventListener("keydown",e=>{
- if(e.key==="Escape")document.getElementById("modal").style.display="none";
-});
-
-attachEvents(grid);
-trending.innerHTML=movies.slice(0,5).map((m,i)=>card(m,i)).join("");
+document.getElementById("close").onclick=()=>document.getElementById("modal").style.display="none";
+document.getElementById("modal").onclick=e=>{if(e.target.id==="modal")e.currentTarget.style.display="none";};
+document.addEventListener("keydown",e=>{if(e.key==="Escape")document.getElementById("modal").style.display="none";});
+attachEvents(grid);attachEvents(animeGrid);
+trending.innerHTML=movies.slice(0,5).map((m,i)=>card(m,i,"movie")).join("");
 attachEvents(trending);
 render();
 document.getElementById("year").textContent=new Date().getFullYear();
 </script>
 
 <script data-cfasync="false" src="https://bancadeltempoidea.org/14/f26dbcef0336174a3ec3d4eb2bcea4ab"></script>
-</body>
-
 <script>
-atOptions = {
- 'key' : '64d75117dea72da975b8e58811ee40cc',
- 'format' : 'iframe',
- 'height' : 90,
- 'width' : 728,
- 'params' : {}
-};
+atOptions={'key':'64d75117dea72da975b8e58811ee40cc','format':'iframe','height':90,'width':728,'params':{}};
 </script>
 <script src="https://bancadeltempoidea.org/22/64d75117dea72da975b8e58811ee40cc"></script>
-
 <script>
-atOptions = {
- 'key' : '486748d918c161780c3364ba37cc027f',
- 'format' : 'iframe',
- 'height' : 60,
- 'width' : 468,
- 'params' : {}
-};
+atOptions={'key':'486748d918c161780c3364ba37cc027f','format':'iframe','height':60,'width':468,'params':{}};
 </script>
 <script src="https://bancadeltempoidea.org/22/486748d918c161780c3364ba37cc027f"></script>
-</html>
+</body>
+ </html>
+
