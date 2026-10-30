@@ -1,0 +1,254 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#080b14">
+<title>FlimBox - Movie Collection</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#080b14;color:white;font-family:Arial,sans-serif}
+header{background:#101522;padding:18px 6%;display:flex;align-items:center;justify-content:space-between;gap:15px;flex-wrap:wrap;position:sticky;top:0;z-index:10}
+.logo{font-size:29px;font-weight:900;color:white}
+.logo span{color:#ff365f}
+nav{display:flex;gap:20px}
+nav a{color:#ddd;text-decoration:none;font-size:14px}
+input{background:#202738;border:1px solid #384258;color:white;padding:12px 16px;border-radius:25px;outline:none}
+.hero{padding:90px 7%;min-height:400px;background:linear-gradient(90deg,#080b14 5%,#080b14cc 55%,transparent),url('https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?w=1500') center/cover}
+.hero h1{font-size:clamp(38px,6vw,65px);max-width:600px;margin:20px 0}
+.hero p{color:#c1c5d0;max-width:480px;line-height:1.8}
+.btn{display:inline-block;margin-top:25px;background:#ff365f;color:white;padding:13px 24px;border:0;border-radius:6px;text-decoration:none;cursor:pointer}
+section{padding:45px 6%}
+.heading{font-size:26px;margin-bottom:25px}
+.heading span{color:#ff365f}
+.filters{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:28px}
+.filters button{background:#1b2231;color:white;border:1px solid #30394c;padding:10px 17px;border-radius:25px;cursor:pointer}
+.filters button.active,.filters button:hover{background:#ff365f;border-color:#ff365f}
+.grid{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:20px}
+.card{background:#151c2b;border-radius:10px;overflow:hidden;cursor:pointer;transition:.3s;border:1px solid #222b3c}
+.card:hover{transform:translateY(-6px);border-color:#ff365f}
+.card img{width:100%;aspect-ratio:2/3;object-fit:cover;display:block;background:#202738}
+.info{padding:13px}
+.info h3{font-size:15px;margin-bottom:9px}
+.info p{font-size:12px;color:#aeb7c8;line-height:1.6}
+.rating{color:#ffcb62}
+.empty{color:#aaa;grid-column:1/-1;text-align:center;padding:30px}
+.modal{display:none;position:fixed;inset:0;background:#000d;z-index:30;align-items:center;justify-content:center;padding:20px}
+.modalbox{background:#171f30;padding:25px;border-radius:14px;max-width:520px;width:100%;position:relative}
+.modalbox img{width:130px;float:left;margin-right:18px;border-radius:7px}
+.modalbox p{color:#c1c7d3;line-height:1.8;margin-top:12px}
+.close{position:absolute;right:18px;top:10px;font-size:28px;cursor:pointer}
+.ad{min-height:90px;border:1px dashed #51596b;margin:20px 6%;display:flex;align-items:center;justify-content:center;color:#888;font-size:13px}
+footer{text-align:center;background:#101522;padding:35px;color:#9da7b8}
+footer a{color:white;margin:8px;text-decoration:none;font-size:13px}
+@media(max-width:950px){.grid{grid-template-columns:repeat(3,1fr)}}
+@media(max-width:600px){
+ header{justify-content:center}
+ nav{width:100%;justify-content:center}
+ header input{width:100%}
+ .grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+ section{padding:35px 4%}
+ .hero{padding:65px 5%}
+}
+</style>
+</head>
+<body>
+
+<header>
+ <a href="#" class="logo">Flim<span>Box</span></a>
+ <nav>
+  <a href="#home">Home</a>
+  <a href="#movies">Movies</a>
+  <a href="#trending">Trending</a>
+ </nav>
+ <input id="search" placeholder="Search movie...">
+</header>
+
+<div class="hero" id="home">
+ <p style="color:#ffcb62;letter-spacing:3px">WELCOME TO FLIMBOX</p>
+ <h1>Unlimited Movie Discovery</h1>
+ <p>Explore Bollywood, South Indian and Hollywood movies. Find your favourite films and discover something new.</p>
+ <a href="#movies" class="btn">Explore Movies →</a>
+</div>
+
+<section id="movies">
+ <h2 class="heading">Explore <span>Movies</span></h2>
+
+ <div class="filters" id="filters">
+  <button class="active" data-cat="All">All</button>
+  <button data-cat="Bollywood">Bollywood</button>
+  <button data-cat="South">South Indian</button>
+  <button data-cat="Hollywood">Hollywood</button>
+ </div>
+
+ <div class="grid" id="movieGrid"></div>
+</section>
+
+<div class="ad">Advertisement Space</div>
+
+<section id="trending">
+ <h2 class="heading">Popular <span>Movies</span></h2>
+ <div class="grid" id="trendingGrid"></div>
+</section>
+
+<div class="modal" id="modal">
+ <div class="modalbox">
+  <span class="close" id="close">&times;</span>
+  <div id="details"></div>
+ </div>
+</div>
+
+<footer>
+ <div class="logo">Flim<span>Box</span></div>
+ <p style="margin:12px">Your Ultimate Movie Discovery Destination</p>
+ <p style="margin:15px">
+  <a href="about.html">About Us</a>
+  <a href="contact.html">Contact</a>
+  <a href="privacy.html">Privacy Policy</a>
+  <a href="disclaimer.html">Disclaimer</a>
+ </p>
+ <p>© <span id="year"></span> FlimBox. All Rights Reserved.</p>
+</footer>
+
+<script>
+const posterBase =
+"https://omniwebticketing6.com/imaginecinemas/files-circuit/images/posters/webcontent/poster/";
+
+const movies = [
+ {
+  name:"Jawan",category:"Bollywood",year:2023,rating:"7.5",
+  poster:posterBase+"Jawan.jpg",
+  description:"An action thriller featuring a gripping story and powerful performances."
+ },
+ {
+  name:"Pushpa 2",category:"South",year:2024,rating:"8.0",
+  poster:posterBase+"pushpa2.jpg",
+  description:"An action-packed Telugu film starring Allu Arjun."
+ },
+ {
+  name:"Kalki 2898 AD",category:"South",year:2024,rating:"7.5",
+  poster:posterBase+"Kalki2898.jpg",
+  description:"A futuristic science-fiction adventure."
+ },
+ {
+  name:"Jailer",category:"South",year:2023,rating:"7.0",
+  poster:posterBase+"Jailer.jpg",
+  description:"An action entertainer starring Rajinikanth."
+ },
+ {
+  name:"Kanguva",category:"South",year:2024,rating:"6.5",
+  poster:posterBase+"Kanguva-Poster.jpg",
+  description:"A fantasy action adventure."
+ },
+ {
+  name:"Raayan",category:"South",year:2024,rating:"7.0",
+  poster:posterBase+"raayan.jpg",
+  description:"A Tamil action drama."
+ },
+ {
+  name:"Jurassic Park",category:"Hollywood",year:1993,rating:"8.2",
+  poster:posterBase+"Jurassic%20Park.jpg",
+  description:"A classic dinosaur adventure."
+ },
+ {
+  name:"Jaws",category:"Hollywood",year:1975,rating:"8.1",
+  poster:posterBase+"Jaws.jpg",
+  description:"A classic suspense thriller."
+ },
+ {
+  name:"Pulp Fiction",category:"Hollywood",year:1994,rating:"8.9",
+  poster:posterBase+"pulp_fiction_ver2.jpg",
+  description:"A celebrated crime drama."
+ },
+ {
+  name:"Kalki Poster",category:"South",year:2024,rating:"7.5",
+  poster:posterBase+"Kalki-Poster%20%28002%29.jpg",
+  description:"An additional poster edition of Kalki 2898 AD."
+ }
+];
+
+const grid=document.getElementById("movieGrid");
+const trending=document.getElementById("trendingGrid");
+const search=document.getElementById("search");
+let category="All";
+
+function card(movie,index){
+ return `
+ <div class="card" data-index="${index}">
+  <img src="${movie.poster}"
+       alt="${movie.name} movie poster"
+       loading="lazy"
+       onerror="this.onerror=null;this.src='https://placehold.co/400x600/151c2b/ffffff?text=Poster+Unavailable'">
+  <div class="info">
+   <h3>${movie.name}</h3>
+   <p>${movie.category} • ${movie.year}</p>
+   <p class="rating">★ ${movie.rating}/10</p>
+  </div>
+ </div>`;
+}
+
+function render(){
+ let results=movies.map((m,i)=>({...m,index:i})).filter(m=>{
+  const matchesCategory=category==="All"||m.category===category;
+  const q=search.value.toLowerCase();
+  return matchesCategory && (m.name.toLowerCase().includes(q) ||
+    m.category.toLowerCase().includes(q));
+ });
+ grid.innerHTML=results.length
+  ?results.map(m=>card(m,m.index)).join("")
+  :'<div class="empty">No movies found!</div>';
+}
+
+function showDetails(movie){
+ document.getElementById("details").innerHTML=`
+  <img src="${movie.poster}" alt="${movie.name} poster"
+  onerror="this.src='https://placehold.co/400x600/151c2b/ffffff?text=Poster'">
+  <h2>${movie.name}</h2>
+  <p>Category: ${movie.category}</p>
+  <p>Release Year: ${movie.year}</p>
+  <p>Rating: ★ ${movie.rating}/10</p>
+  <p>${movie.description}</p>
+  <div style="clear:both"></div>
+ `;
+ document.getElementById("modal").style.display="flex";
+}
+
+function attachEvents(element){
+ element.addEventListener("click",e=>{
+  const item=e.target.closest(".card");
+  if(item)showDetails(movies[Number(item.dataset.index)]);
+ });
+}
+
+document.querySelectorAll(".filters button").forEach(btn=>{
+ btn.addEventListener("click",()=>{
+  document.querySelectorAll(".filters button").forEach(b=>b.classList.remove("active"));
+  btn.classList.add("active");
+  category=btn.dataset.cat;
+  render();
+ });
+});
+
+search.addEventListener("input",render);
+
+document.getElementById("close").onclick=()=>{
+ document.getElementById("modal").style.display="none";
+};
+
+document.getElementById("modal").onclick=e=>{
+ if(e.target.id==="modal")e.currentTarget.style.display="none";
+};
+
+document.addEventListener("keydown",e=>{
+ if(e.key==="Escape")document.getElementById("modal").style.display="none";
+});
+
+attachEvents(grid);
+trending.innerHTML=movies.slice(0,5).map((m,i)=>card(m,i)).join("");
+attachEvents(trending);
+render();
+document.getElementById("year").textContent=new Date().getFullYear();
+</script>
+</body>
+</html>
